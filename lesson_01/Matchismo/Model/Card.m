@@ -12,6 +12,15 @@
 
 @synthesize chosen = _chosen;
 @synthesize matched = _matched;
+@synthesize flip = _flip;
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.flip = NO;
+    }
+    return self;
+}
 
 -(int)match:(NSArray *)otherCards{
     int score = 0;

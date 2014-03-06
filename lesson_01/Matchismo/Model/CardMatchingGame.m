@@ -40,34 +40,55 @@ static const int COST_TO_CHOOSEN = 1;
 
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
+    NSLog(@"choose %d", index);
     Card *card = [self cardAtIndex:index];
     
-    if(!card.isMatched){
-        if(card.isChosen){
+    if(!card.isMatched)
+    {
+        if(card.isChosen)
+        {
             card.chosen = NO;
-        } else {
-            for (Card *otherCard in self.cards){
-                if(otherCard.isChosen && !otherCard.isMatched){
+        }
+        else
+        {
+            for (Card *c in self.cards) {
+                if (c.isFliped) {
+                    c.flip = NO;
+                    c.chosen = NO;
+                }
+            }
+            
+            self.score -= COST_TO_CHOOSEN;
+            card.chosen = YES;
+            
+            for (Card *otherCard in self.cards)
+            {
+                if(otherCard != card && otherCard.isChosen && !otherCard.isMatched)
+                {
                     int matchScore = [card match:@[otherCard]];
-                    if(matchScore){
+                    NSLog(@"Score: %d", matchScore);
+                    if(matchScore)
+                    {
                         self.score += matchScore * MATCH_BONUS;
                         otherCard.matched = YES;
                         card.matched = YES;
                     }
-                    else{
+                    else
+                    {
                         self.score -= MISMATCH_PENALTY;
-                        otherCard.chosen = NO;
+                        otherCard.flip = YES;
+                        card.flip = YES;
                     }
                     break;
                 }
             }
-            self.score -= COST_TO_CHOOSEN;
-            card.chosen = YES;
+            
         }
     }
 }
 
-- (Card *)cardAtIndex:(NSUInteger)index{
+- (Card *)cardAtIndex:(NSUInteger)index
+{
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
