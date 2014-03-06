@@ -13,9 +13,11 @@
 @interface CardMatchingGame : NSObject
 
 @property (nonatomic, readonly) NSInteger score;
+@property (nonatomic, readwrite) NSInteger cardMode;
 
 - (instancetype)initWithCardCount:(NSUInteger)count 
-                        usingDeck:(Deck *)deck;
+                        usingDeck:(Deck *)deck 
+                     useThreeCard:(BOOL)isThreeCard;
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;

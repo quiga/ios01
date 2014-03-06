@@ -44,6 +44,21 @@
         } else if([otherCard.suit isEqualToString:self.suit]){
             score = 1;
         }
+    } else {
+        for (PlayingCard *card3 in otherCards) {
+            for(PlayingCard *otherCard in otherCards){
+                if(card3 != otherCard){
+                    if(otherCard.rank == self.rank || otherCard.rank == card3.rank || card3.rank == self.rank){
+                        score += 4;
+                    } else if([otherCard.suit isEqualToString:self.suit] || [card3.suit isEqualToString:self.suit] || [otherCard.suit isEqualToString:card3.suit]){
+                        score += 1;
+                    }
+                }
+            }
+            
+        }
+        
+        
     }
     return score;
 }

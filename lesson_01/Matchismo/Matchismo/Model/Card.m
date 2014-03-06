@@ -26,10 +26,10 @@
     int score = 0;
     for(Card *card in otherCards){
         if([card.contents isEqualToString:self.contents]){
-            score=1;
+            score+=1;
         }
     }
-    return score;
+    return score==[otherCards count]?1:0;
 }
 
 @end

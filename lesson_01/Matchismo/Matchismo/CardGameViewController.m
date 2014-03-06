@@ -15,6 +15,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *switchOutlet;
 
 @end
 
@@ -23,7 +24,7 @@
 - (CardMatchingGame *)game{
     if(!_game){
         _game=[[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] 
-                                                usingDeck:[self createDeck]];
+                                                usingDeck:[self createDeck] useThreeCard:NO];
     }
     return _game;
 }
@@ -33,16 +34,22 @@
 }
 
 - (IBAction)switchAction:(UISegmentedControl *)sender {
-    
+    self.game.cardMode = [self.switchOutlet selectedSegmentIndex]==0 ? 2 : 3;
+    [self updateUI];
+}
+
+-(void)reInitGame:(BOOL)useMode{
+    _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck] useThreeCard:useMode];
 }
 
 - (IBAction)resetAction:(UIButton *)sender {
-    _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
-    
+    [self.switchOutlet setEnabled:YES];
+    [self reInitGame:(BOOL)[self.switchOutlet selectedSegmentIndex]];
     [self updateUI];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
+    [self.switchOutlet setEnabled:NO];
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
