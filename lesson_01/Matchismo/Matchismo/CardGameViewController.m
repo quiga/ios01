@@ -50,6 +50,10 @@
     self.game.cardMode = [self.switchOutlet selectedSegmentIndex]==0 ? 2 : 3;
 }
 
+/**
+ 
+ 
+ */
 - (IBAction)resetAction:(UIButton *)sender {
     [self.switchOutlet setEnabled:YES];
     _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];

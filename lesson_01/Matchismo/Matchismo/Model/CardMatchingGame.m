@@ -118,7 +118,7 @@ static const int COST_TO_CHOOSEN = 1;
         [self sendMessageLog:card.contents];
         if(card.isChosen)        {
             card.chosen = NO;
-            [self sendMessageLog:@""];
+            [self sendMessageLog:[NSString stringWithFormat:@"%@ reversing", card.contents]];
         }
         else
         {
@@ -136,10 +136,6 @@ static const int COST_TO_CHOOSEN = 1;
                 [self matchWithModeTwo:card];
             else
                 [self matchWithModeThree:card];
-            
-            
-
-            
         }
     }
 }
