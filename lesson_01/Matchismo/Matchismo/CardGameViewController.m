@@ -37,7 +37,7 @@
     if(!_game){
         _game=[[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] 
                                                 usingDeck:[self createDeck]];
-        self.game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
+        _game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
     }
     return _game;
 }
@@ -50,14 +50,10 @@
     self.game.cardMode = [self.switchOutlet selectedSegmentIndex]==0 ? 2 : 3;
 }
 
--(void)reInitGame:(BOOL)useMode{
-    _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
-    self.game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
-}
-
 - (IBAction)resetAction:(UIButton *)sender {
     [self.switchOutlet setEnabled:YES];
-    [self reInitGame:(BOOL)[self.switchOutlet selectedSegmentIndex]];
+    _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    self.game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
     [self updateUI];
 }
 

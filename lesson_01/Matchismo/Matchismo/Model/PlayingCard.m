@@ -8,6 +8,9 @@
 
 #import "PlayingCard.h"
 
+#define MATCH_CARDS__RANK 4
+#define MATCH_CARDS__SUIT 1
+
 @implementation PlayingCard
 
 
@@ -40,26 +43,24 @@
     if([otherCards count] == 1){
         PlayingCard *otherCard = [otherCards firstObject];
         if(otherCard.rank == self.rank){
-            score = 4;
+            score = MATCH_CARDS__RANK;
         } else if([otherCard.suit isEqualToString:self.suit]){
-            score = 1;
+            score = MATCH_CARDS__SUIT;
         }
     } else {
-        // javitani 2szer néz mindent.
-        for (PlayingCard *card3 in otherCards) {
-            for(PlayingCard *otherCard in otherCards){
+        for (int i=0; i<[otherCards count]; i++) {
+            PlayingCard *card3 = [otherCards objectAtIndex:i];
+            for (int j=i; j<[otherCards count]; j++) {
+                PlayingCard *otherCard = [otherCards objectAtIndex:j];
                 if(card3 != otherCard){
                     if(otherCard.rank == self.rank || otherCard.rank == card3.rank || card3.rank == self.rank){
-                        score += 4;
+                        score += MATCH_CARDS__RANK;
                     } else if([otherCard.suit isEqualToString:self.suit] || [card3.suit isEqualToString:self.suit] || [otherCard.suit isEqualToString:card3.suit]){
-                        score += 1;
+                        score += MATCH_CARDS__SUIT;
                     }
                 }
             }
-            
         }
-        
-        
     }
     return score;
 }
