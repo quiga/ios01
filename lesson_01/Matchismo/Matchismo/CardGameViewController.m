@@ -28,7 +28,7 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingNotification:) name:@"messageLog" object:nil];
 }
-
+ 
 - (void) incomingNotification:(NSNotification *)notification{
     self.messageOutlet.text = [notification object];
 }
