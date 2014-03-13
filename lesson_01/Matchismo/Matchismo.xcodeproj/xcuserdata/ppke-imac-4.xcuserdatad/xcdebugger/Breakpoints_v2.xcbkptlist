@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Matchismo/CardGameViewController.m"
-            timestampString = "415806100.515059"
+            timestampString = "416420724.290149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-touchCardButton:"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-createDeck"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

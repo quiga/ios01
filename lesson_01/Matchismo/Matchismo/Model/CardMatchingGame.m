@@ -13,6 +13,9 @@
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, strong) NSMutableArray *cards;
 
+- (void)matchWithModeTwo:(Card *)card;
+- (void)matchWithModeThree:(Card *)card;
+- (void)sendMessageLog:(NSString *)msg;
 
 @end
 
@@ -24,13 +27,12 @@ static const int COST_TO_CHOOSEN = 1;
 
 - (instancetype)initWithCardCount:(NSUInteger)count
                         usingDeck:(Deck *)deck
-                     useThreeCard:(BOOL)isThreeCard
 {
     self = [super init];
     
     if(self){
+        self.score = 0;
         [self.cards removeAllObjects];
-        self.cardMode = isThreeCard ? 3 : 2;
         
         for (int i = 0; i < count; i++) {
             Card *card = [deck drawRandomCard];
@@ -55,12 +57,16 @@ static const int COST_TO_CHOOSEN = 1;
                 self.score += matchScore * MATCH_BONUS;
                 otherCard.matched = YES;
                 card.matched = YES;
+                
+                [self sendMessageLog:[NSString stringWithFormat:@"Matched %@ %@ for %d points.", card.contents, otherCard.contents, matchScore * MATCH_BONUS]];
             }
             else
             {
                 self.score -= MISMATCH_PENALTY;
                 otherCard.flip = YES;
                 card.flip = YES;
+                
+                [self sendMessageLog:[NSString stringWithFormat:@"%@ %@  don’t match! %d point penalty!", card.contents, otherCard.contents, MISMATCH_PENALTY]];
             }
             break;
         }
@@ -78,9 +84,11 @@ static const int COST_TO_CHOOSEN = 1;
                     if(matchScore)
                     {
                         self.score += matchScore * MATCH_BONUS;
+                        NSLog(@"%d", matchScore);
                         otherCard.matched = YES;
                         card3.matched = YES;
                         card.matched = YES;
+                        [self sendMessageLog:[NSString stringWithFormat:@"Matched %@ %@ %@ for %d points.", card.contents, otherCard.contents, card3.contents, matchScore * MATCH_BONUS]];
                     }
                     else
                     {
@@ -88,6 +96,7 @@ static const int COST_TO_CHOOSEN = 1;
                         otherCard.flip = YES;
                         card3.flip = YES;
                         card.flip = YES;
+                        [self sendMessageLog:[NSString stringWithFormat:@"%@ %@ %@  don’t match! %d point penalty!", card.contents, otherCard.contents, card3.contents, MISMATCH_PENALTY]];
                     }
                     break;
                 }
@@ -96,14 +105,20 @@ static const int COST_TO_CHOOSEN = 1;
     }
 }
 
+- (void)sendMessageLog:(NSString *)msg{
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"messageLog" object: msg];
+}
+
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
     
     if(!card.isMatched)
     {
+        [self sendMessageLog:card.contents];
         if(card.isChosen)        {
             card.chosen = NO;
+            [self sendMessageLog:@""];
         }
         else
         {
@@ -121,6 +136,9 @@ static const int COST_TO_CHOOSEN = 1;
                 [self matchWithModeTwo:card];
             else
                 [self matchWithModeThree:card];
+            
+            
+
             
         }
     }

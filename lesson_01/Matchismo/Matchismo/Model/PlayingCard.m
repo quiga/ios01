@@ -45,6 +45,7 @@
             score = 1;
         }
     } else {
+        // javitani 2szer néz mindent.
         for (PlayingCard *card3 in otherCards) {
             for(PlayingCard *otherCard in otherCards){
                 if(card3 != otherCard){

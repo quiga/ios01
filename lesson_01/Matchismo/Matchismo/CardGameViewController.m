@@ -16,15 +16,28 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *messageOutlet;
+
+- (void)incomingNotification:(NSNotification *)notification;
 
 @end
 
 @implementation CardGameViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingNotification:) name:@"messageLog" object:nil];
+}
+
+- (void) incomingNotification:(NSNotification *)notification{
+    self.messageOutlet.text = [notification object];
+}
+
 - (CardMatchingGame *)game{
     if(!_game){
         _game=[[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] 
-                                                usingDeck:[self createDeck] useThreeCard:NO];
+                                                usingDeck:[self createDeck]];
+        self.game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
     }
     return _game;
 }
@@ -35,11 +48,11 @@
 
 - (IBAction)switchAction:(UISegmentedControl *)sender {
     self.game.cardMode = [self.switchOutlet selectedSegmentIndex]==0 ? 2 : 3;
-    [self updateUI];
 }
 
 -(void)reInitGame:(BOOL)useMode{
-    _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck] useThreeCard:useMode];
+    _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    self.game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
 }
 
 - (IBAction)resetAction:(UIButton *)sender {
@@ -63,7 +76,7 @@
         [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [button setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         button.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+        self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.game.score];
     }
 }
 

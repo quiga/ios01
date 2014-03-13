@@ -16,12 +16,10 @@
 @property (nonatomic, readwrite) NSInteger cardMode;
 
 - (instancetype)initWithCardCount:(NSUInteger)count 
-                        usingDeck:(Deck *)deck 
-                     useThreeCard:(BOOL)isThreeCard;
+                        usingDeck:(Deck *)deck;
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-//- (void)resetGame;
 
 @end
