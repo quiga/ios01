@@ -15,6 +15,8 @@
 @property (nonatomic, getter = isMatched) BOOL matched;
 @property (nonatomic, getter = isFliped) BOOL flip;
 
+@property (nonatomic) NSUInteger numberOfMatchingCards;
+
 - (int)match:(NSArray *)otherCards;
 
 

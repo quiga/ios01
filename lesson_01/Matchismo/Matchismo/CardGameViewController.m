@@ -50,10 +50,6 @@
     self.game.cardMode = [self.switchOutlet selectedSegmentIndex]==0 ? 2 : 3;
 }
 
-/**
- 
- 
- */
 - (IBAction)resetAction:(UIButton *)sender {
     [self.switchOutlet setEnabled:YES];
     _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
@@ -73,15 +69,16 @@
         int cardButtonIndex = [self.cardButtons indexOfObject:button];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         
-        [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        [button setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [button setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         button.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.game.score];
     }
 }
 
-- (NSString *)titleForCard:(Card *)card{
-    return card.isChosen ? card.contents : @"";
+- (NSAttributedString *)titleForCard:(Card *)card{
+    NSAttributedString *title = [[NSAttributedString alloc] initWithString:card.chosen ? card.contents : @""];
+    return title;
 }
 
 - (UIImage *)backgroundImageForCard:(Card *)card{

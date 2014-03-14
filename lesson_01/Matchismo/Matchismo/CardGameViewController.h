@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
 
 @interface CardGameViewController : UIViewController
+
+- (Deck *)createDeck;
+
+- (NSAttributedString *)titleForCard:(Card *)card;
+- (UIImage *)backgroundImageForCard:(Card *)card;
+- (void)updateUI;
 
 @end
