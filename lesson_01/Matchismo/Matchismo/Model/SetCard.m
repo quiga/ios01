@@ -54,6 +54,7 @@
 }
 
 + (NSArray *)validColors{
+//    return @[@"red", @"red", @"red"];
     return @[@"red", @"green", @"purple"];
 }
 
@@ -79,6 +80,52 @@
 
 - (int)match:(NSArray *)otherCards{
     int score = 0;
+    
+    if ([otherCards count] == self.numberOfMatchingCards - 1)
+    {
+        NSMutableArray *colors = [[NSMutableArray alloc] init];
+        NSMutableArray *shape = [[NSMutableArray alloc] init];
+        NSMutableArray *shadings = [[NSMutableArray alloc] init];
+        NSMutableArray *numbers = [[NSMutableArray alloc] init];
+        
+        [colors addObject:self.color];
+        [shape addObject:self.shape];
+        [shadings addObject:self.shading];
+        [numbers addObject:@(self.number)];
+        
+        for (id _card in otherCards) {
+            if ([_card isKindOfClass:[SetCard class]]) {
+                
+                SetCard *otherCard = (SetCard *)_card;
+                if (![colors containsObject:otherCard.color])
+                    [colors addObject:otherCard.color];
+                
+                if (![shape containsObject:otherCard.shape])
+                    [shape addObject:otherCard.shape];
+                
+                if (![shadings containsObject:otherCard.shading])
+                    [shadings addObject:otherCard.shading];
+                
+                if (![numbers containsObject:@(otherCard.number)])
+                    [numbers addObject:@(otherCard.number)];
+                
+                if ([colors count] == 1 || [colors count] == self.numberOfMatchingCards)
+                {
+                    if ([shape count] == 1 || [shape count] == self.numberOfMatchingCards)
+                    {
+                        if ([shadings count] == 1 || [shadings count] == self.numberOfMatchingCards)
+                        {
+                            if ([numbers count] == 1 || [numbers count] == self.numberOfMatchingCards)
+                            {
+                                score = 4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     return score;
 }
 

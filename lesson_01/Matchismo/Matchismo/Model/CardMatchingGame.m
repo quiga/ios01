@@ -113,6 +113,7 @@ static const int COST_TO_CHOOSEN = 1;
 {
     Card *card = [self cardAtIndex:index];
     
+    
     if(!card.isMatched)
     {
         [self sendMessageLog:card.contents];
