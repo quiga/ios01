@@ -17,4 +17,6 @@
 - (UIImage *)backgroundImageForCard:(Card *)card;
 - (void)updateUI;
 
+- (void)resetGame:(NSUInteger)mode;
+
 @end

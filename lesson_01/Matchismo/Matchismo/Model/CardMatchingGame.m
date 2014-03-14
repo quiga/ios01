@@ -88,6 +88,11 @@ static const int COST_TO_CHOOSEN = 1;
                         otherCard.matched = YES;
                         card3.matched = YES;
                         card.matched = YES;
+                        NSLog(@"%@", card.contents);
+                        NSLog(@"%@", otherCard.contents);
+                        NSLog(@"%@", card3.contents);
+                        NSLog(@"%d", matchScore * MATCH_BONUS);
+                        NSLog(@"%@" , [NSString stringWithFormat:@"Matched %@ %@ %@ for %d points.", card.contents, otherCard.contents, card3.contents, matchScore * MATCH_BONUS]);
                         [self sendMessageLog:[NSString stringWithFormat:@"Matched %@ %@ %@ for %d points.", card.contents, otherCard.contents, card3.contents, matchScore * MATCH_BONUS]];
                     }
                     else
@@ -96,6 +101,7 @@ static const int COST_TO_CHOOSEN = 1;
                         otherCard.flip = YES;
                         card3.flip = YES;
                         card.flip = YES;
+                        
                         [self sendMessageLog:[NSString stringWithFormat:@"%@ %@ %@  don’t match! %d point penalty!", card.contents, otherCard.contents, card3.contents, MISMATCH_PENALTY]];
                     }
                     break;

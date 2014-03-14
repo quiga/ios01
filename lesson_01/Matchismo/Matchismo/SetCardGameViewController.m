@@ -9,7 +9,7 @@
 #import "SetCardGameViewController.h"
 
 @interface SetCardGameViewController ()
-@property (strong, nonatomic) CardMatchingGame *setGame;
+@property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *messageOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
@@ -23,19 +23,18 @@
 }
 
 - (void) incomingNotification:(NSNotification *)notification{
-    self.messageOutlet.text = [notification object];
-/*
+
     NSArray *s = [[notification object] componentsSeparatedByString: @":"];
-    
+
     NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
     NSString *symbol = @"?";
-    
+
     symbol = [[SetCard validShapeSymbols] objectForKey:[s objectAtIndex: 0] ];
     
-    symbol = [symbol stringByPaddingToLength:(NSUInteger)[s objectAtIndex: 3]
+    symbol = [symbol stringByPaddingToLength:[[s objectAtIndex: 3] intValue]
                                   withString:symbol
                              startingAtIndex:0];
-    
+
     [attributes setObject:[[SetCard validColorObjects] objectForKey:[s objectAtIndex: 1]] forKey:NSForegroundColorAttributeName];
     
     if ([[s objectAtIndex:2] isEqualToString: @"solid"])
@@ -51,31 +50,32 @@
     if ([[s objectAtIndex:2] isEqualToString: @"open"])
         [attributes setObject:@5 forKey:NSStrokeWidthAttributeName];
     
-   // self.messageOutlet.attributedText = [[NSAttributedString alloc] initWithString:symbol attributes:attributes];
- */
     
+    // itt a hiba, egyezés esetén nem tuja magfaelelően tördelni az üzenetet,  a symbol nil lesz.
+    
+    self.messageOutlet.attributedText = [[NSAttributedString alloc] initWithString:symbol attributes:attributes];
 }
 
-- (CardMatchingGame *)setGame{
-    if(!_setGame){
-        _setGame=[[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+- (CardMatchingGame *)game{
+    if(!_game){
+        _game=[[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                 usingDeck:[self createDeck]];
-        _setGame.cardMode = 3;
+        _game.cardMode = 3;
     }
-    return _setGame;
+    return _game;
 }
 
 - (IBAction)reDealButtonAction:(UIButton *)sender {
-    _setGame=[self.setGame initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
-    self.setGame.cardMode = 3;
-    [self updateUI];
+    [super resetGame:3];
+    self.messageOutlet.text = @"";
 }
 
 - (IBAction)touchAction:(UIButton *)sender {
+    NSLog(@" %@", sender.titleLabel.text);
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    [self.setGame chooseCardAtIndex:chosenButtonIndex];
+   [self.game chooseCardAtIndex:chosenButtonIndex];
 
-    [self updateUI];
+   [self updateUI];
 }
 
 - (NSAttributedString *)titleForCard:(Card *)card {
@@ -107,7 +107,6 @@
         if ([setCard.shading isEqualToString:@"open"])
         [attributes setObject:@5 forKey:NSStrokeWidthAttributeName];
     }
-
     
     return [[NSAttributedString alloc] initWithString:symbol attributes:attributes];
 }
@@ -115,6 +114,10 @@
 - (UIImage *)backgroundImageForCard:(Card *)card
 {
     return [UIImage imageNamed:[card isChosen] ? @"selectedCard" : @"setCard"];
+}
+
+- (void)updateUI{
+    [super updateUI];
 }
 
 - (void)viewDidLoad

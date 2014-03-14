@@ -125,7 +125,8 @@
             }
         }
     }
-
+    
+    NSLog(@"%d", score);
     return score;
 }
 
