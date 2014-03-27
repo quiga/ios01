@@ -66,7 +66,7 @@
 }
 
 + (NSDictionary *)validShapeSymbols{
-    return @{@"oval": @"●", @"squigle": @"▲", @"diamond": @"■"};
+    return @{@"oval": @"●", @"squiggle": @"▲", @"diamond": @"■"};
 }
 
 + (NSArray *)validShadings{

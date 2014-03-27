@@ -42,20 +42,22 @@
     [self updateUI];
 }
 
-- (NSAttributedString *)titleForCard:(Card *)card
-{
+- (NSAttributedString *)titleForCard:(Card *)card {
+    
     NSString *symbol = @"?";
     NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
     
     if ([card isKindOfClass:[SetCard class]]) {
+        
         SetCard *setCard = (SetCard *)card;
-        symbol = SetCard.validShapeSymbols[setCard.shape];
+        symbol = [[SetCard validShapeSymbols] objectForKey:setCard.shape];
         
         symbol = [symbol stringByPaddingToLength:setCard.number
                                       withString:symbol
                                  startingAtIndex:0];
         
-        [attributes setObject:SetCard.validColorObjects[setCard.color] forKey:NSForegroundColorAttributeName];
+        [attributes setObject:[[SetCard validColorObjects] objectForKey:setCard.color] forKey:NSForegroundColorAttributeName];
+        //NSLog(@" %@", [[SetCard validColorObjects] objectForKey:setCard.color ]);
         
         
         if ([setCard.shading isEqualToString:@"solid"])
@@ -71,13 +73,19 @@
         [attributes setObject:@5 forKey:NSStrokeWidthAttributeName];
     }
     
-    return [[NSMutableAttributedString alloc] initWithString:symbol
-                                                  attributes:attributes];
+    /*
+    for (id key in attributes) {
+        NSLog(@"key: %@, value: %@", key, [attributes objectForKey:key]);
+    }
+    */
+    
+    return [[NSAttributedString alloc] initWithString:symbol attributes:attributes];
 }
 
 - (UIImage *)backgroundImageForCard:(Card *)card
 {
-    return [UIImage imageNamed:card.chosen ? @"selectedCard" : @"setCard"];
+    //return [UIImage imageNamed:[card isChosen] ? @"setCard" : @"selectedCard"];
+    return [UIImage imageNamed:[card isChosen] ? @"selectedCard" : @"setCard"];
 }
 
 - (void)viewDidLoad
