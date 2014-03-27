@@ -151,4 +151,13 @@ static const int COST_TO_CHOOSEN = 1;
     return _cards;
 }
 
+- (NSUInteger)maxMatchingCards{
+    Card *card = [self.cards firstObject];
+    if (_maxMatchingCards < card.numberOfMatchingCards) {
+        _maxMatchingCards = card.numberOfMatchingCards;
+    }
+    return _maxMatchingCards;
+    
+}
+
 @end

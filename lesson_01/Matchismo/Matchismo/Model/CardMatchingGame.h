@@ -15,6 +15,10 @@
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic, readwrite) NSInteger cardMode;
 
+@property (nonatomic) NSUInteger maxMatchingCards;
+@property (nonatomic, readonly) NSArray *lastChosenCards;
+@property (nonatomic, readonly) NSInteger lastScore;
+
 - (instancetype)initWithCardCount:(NSUInteger)count 
                         usingDeck:(Deck *)deck;
 

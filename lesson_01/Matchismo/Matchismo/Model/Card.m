@@ -13,6 +13,7 @@
 @synthesize chosen = _chosen;
 @synthesize matched = _matched;
 @synthesize flip = _flip;
+@synthesize numberOfMatchingCards = _numberOfMatchingCards;
 
 - (instancetype)init{
     self = [super init];
@@ -22,7 +23,7 @@
     return self;
 }
 
--(int)match:(NSArray *)otherCards{
+- (int)match:(NSArray *)otherCards{
     int score = 0;
     for(Card *card in otherCards){
         if([card.contents isEqualToString:self.contents]){
@@ -30,6 +31,11 @@
         }
     }
     return score==[otherCards count]?1:0;
+}
+
+- (NSUInteger)numberOfMatchingCards{
+    if(!_numberOfMatchingCards) _numberOfMatchingCards = 2;
+    return _numberOfMatchingCards;
 }
 
 @end

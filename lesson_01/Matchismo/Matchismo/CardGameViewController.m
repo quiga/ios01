@@ -7,15 +7,13 @@
 //
 
 #import "CardGameViewController.h"
-#import "PlayingCardDeck.h"
-#import "CardMatchingGame.h"
+
 
 @interface CardGameViewController ()
 
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *switchOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *messageOutlet;
 
 - (void)incomingNotification:(NSNotification *)notification;
@@ -37,7 +35,7 @@
     if(!_game){
         _game=[[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count] 
                                                 usingDeck:[self createDeck]];
-        _game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
+        _game.cardMode = 2;
     }
     return _game;
 }
@@ -46,23 +44,13 @@
     return [[PlayingCardDeck alloc] init];
 }
 
-- (IBAction)switchAction:(UISegmentedControl *)sender {
-    self.game.cardMode = [self.switchOutlet selectedSegmentIndex]==0 ? 2 : 3;
-}
-
-/**
- 
- 
- */
 - (IBAction)resetAction:(UIButton *)sender {
-    [self.switchOutlet setEnabled:YES];
     _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
-    self.game.cardMode = [self.switchOutlet selectedSegmentIndex] == 0 ? 2 : 3;
+    self.game.cardMode = 2;
     [self updateUI];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
-    [self.switchOutlet setEnabled:NO];
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
@@ -73,15 +61,16 @@
         int cardButtonIndex = [self.cardButtons indexOfObject:button];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         
-        [button setTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        [button setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [button setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         button.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.game.score];
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.game.score];
 }
 
-- (NSString *)titleForCard:(Card *)card{
-    return card.isChosen ? card.contents : @"";
+- (NSAttributedString *)titleForCard:(Card *)card{
+    NSAttributedString *title = [[NSAttributedString alloc] initWithString:card.chosen ? card.contents : @""];
+    return title;
 }
 
 - (UIImage *)backgroundImageForCard:(Card *)card{
