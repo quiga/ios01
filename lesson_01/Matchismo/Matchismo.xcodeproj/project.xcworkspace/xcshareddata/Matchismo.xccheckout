@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0D3E6AE9-FCEB-4D31-A081-E4990C870B98</string>
+	<string>6B4FADBF-B1CB-472D-9266-3A104D602D5B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Matchismo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/quiga/ios01.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>lesson_01/Matchismo.xcodeproj/project.xcworkspace</string>
+	<string>lesson_01/Matchismo/Matchismo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CF0934A3-C2AE-4E3C-B005-EF312278A683</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/quiga/ios01.git</string>

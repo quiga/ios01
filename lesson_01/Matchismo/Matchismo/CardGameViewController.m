@@ -44,7 +44,12 @@
     return [[PlayingCardDeck alloc] init];
 }
 
-- (IBAction)resetAction:(UIButton *)sender {
+- (void)resetGame:(NSUInteger)mode{
+    [self resetAction];
+    self.game.cardMode = mode;
+}
+
+- (IBAction)resetAction {
     _game=[self.game initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
     self.game.cardMode = 2;
     [self updateUI];
