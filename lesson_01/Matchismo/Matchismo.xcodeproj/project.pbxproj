@@ -29,6 +29,7 @@
 		BF0FF8D318E4600400C1DD4E /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0FF8D218E4600400C1DD4E /* SetCard.m */; };
 		BF0FF8D618E4602200C1DD4E /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0FF8D518E4602200C1DD4E /* SetCardDeck.m */; };
 		BF0FF8D918E460D100C1DD4E /* SetCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0FF8D818E460D100C1DD4E /* SetCardGameViewController.m */; };
+		BFE1BD1018EE8CE30042A0DA /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE1BD0F18EE8CE30042A0DA /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		BF0FF8D518E4602200C1DD4E /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardDeck.m; path = Model/SetCardDeck.m; sourceTree = "<group>"; };
 		BF0FF8D718E460D100C1DD4E /* SetCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardGameViewController.h; sourceTree = "<group>"; };
 		BF0FF8D818E460D100C1DD4E /* SetCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardGameViewController.m; sourceTree = "<group>"; };
+		BFE1BD0E18EE8CE30042A0DA /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		BFE1BD0F18EE8CE30042A0DA /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				B1162A1018C616B5009FB2CD /* CardGameViewController.m */,
 				BF0FF8D718E460D100C1DD4E /* SetCardGameViewController.h */,
 				BF0FF8D818E460D100C1DD4E /* SetCardGameViewController.m */,
+				BFE1BD0E18EE8CE30042A0DA /* HistoryViewController.h */,
+				BFE1BD0F18EE8CE30042A0DA /* HistoryViewController.m */,
 				B1162A1218C616B5009FB2CD /* Images.xcassets */,
 				B1162A3B18C62F47009FB2CD /* Model */,
 				B1162A0118C616B5009FB2CD /* Supporting Files */,
@@ -309,6 +314,7 @@
 				B164BE2118C68E5600C4DC17 /* Deck.m in Sources */,
 				B1162A0718C616B5009FB2CD /* main.m in Sources */,
 				BF0FF8D318E4600400C1DD4E /* SetCard.m in Sources */,
+				BFE1BD1018EE8CE30042A0DA /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
