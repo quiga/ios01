@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1A49BF0191215F200786375 /* MyFlickrFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BEF191215F200786375 /* MyFlickrFetch.m */; };
+		B1A49BF31912343300786375 /* QGPageOne_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BF21912343300786375 /* QGPageOne_TVC.m */; };
+		B1A49BF619123C6400786375 /* QGPageOnePhotoList_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BF519123C6400786375 /* QGPageOnePhotoList_TVC.m */; };
 		B1B0E0561911ECE900E29C2B /* assignmentFive-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */; };
 		B1B0E0571911ECE900E29C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0461911ECE900E29C2B /* Main.storyboard */; };
 		B1B0E0581911ECE900E29C2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0481911ECE900E29C2B /* InfoPlist.strings */; };
@@ -14,8 +17,6 @@
 		B1B0E05A1911ECE900E29C2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E04E1911ECE900E29C2B /* Images.xcassets */; };
 		B1B0E05B1911ECE900E29C2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E04F1911ECE900E29C2B /* main.m */; };
 		B1B0E05C1911ECE900E29C2B /* QGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E0511911ECE900E29C2B /* QGAppDelegate.m */; };
-		B1B0E05D1911ECE900E29C2B /* QGFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E0531911ECE900E29C2B /* QGFirstViewController.m */; };
-		B1B0E05E1911ECE900E29C2B /* QGSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E0551911ECE900E29C2B /* QGSecondViewController.m */; };
 		B1C53FD218D2CC420049526F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD118D2CC420049526F /* Foundation.framework */; };
 		B1C53FD418D2CC420049526F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD318D2CC420049526F /* CoreGraphics.framework */; };
 		B1C53FD618D2CC420049526F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD518D2CC420049526F /* UIKit.framework */; };
@@ -37,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1A49BEE191215F200786375 /* MyFlickrFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlickrFetch.h; sourceTree = "<group>"; };
+		B1A49BEF191215F200786375 /* MyFlickrFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlickrFetch.m; sourceTree = "<group>"; };
+		B1A49BF11912343300786375 /* QGPageOne_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGPageOne_TVC.h; sourceTree = "<group>"; };
+		B1A49BF21912343300786375 /* QGPageOne_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGPageOne_TVC.m; sourceTree = "<group>"; };
+		B1A49BF419123C6400786375 /* QGPageOnePhotoList_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGPageOnePhotoList_TVC.h; sourceTree = "<group>"; };
+		B1A49BF519123C6400786375 /* QGPageOnePhotoList_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGPageOnePhotoList_TVC.m; sourceTree = "<group>"; };
 		B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "assignmentFive-Info.plist"; sourceTree = "<group>"; };
 		B1B0E0451911ECE900E29C2B /* assignmentFive-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "assignmentFive-Prefix.pch"; sourceTree = "<group>"; };
 		B1B0E0471911ECE900E29C2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,10 +55,6 @@
 		B1B0E04F1911ECE900E29C2B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1B0E0501911ECE900E29C2B /* QGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGAppDelegate.h; sourceTree = "<group>"; };
 		B1B0E0511911ECE900E29C2B /* QGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGAppDelegate.m; sourceTree = "<group>"; };
-		B1B0E0521911ECE900E29C2B /* QGFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGFirstViewController.h; sourceTree = "<group>"; };
-		B1B0E0531911ECE900E29C2B /* QGFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGFirstViewController.m; sourceTree = "<group>"; };
-		B1B0E0541911ECE900E29C2B /* QGSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGSecondViewController.h; sourceTree = "<group>"; };
-		B1B0E0551911ECE900E29C2B /* QGSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGSecondViewController.m; sourceTree = "<group>"; };
 		B1C53FCE18D2CC420049526F /* assignmentFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C53FD118D2CC420049526F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B1C53FD318D2CC420049526F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,12 +100,14 @@
 				B1B0E04A1911ECE900E29C2B /* FlickrFetcher */,
 				B1B0E04E1911ECE900E29C2B /* Images.xcassets */,
 				B1B0E04F1911ECE900E29C2B /* main.m */,
+				B1A49BEE191215F200786375 /* MyFlickrFetch.h */,
+				B1A49BEF191215F200786375 /* MyFlickrFetch.m */,
 				B1B0E0501911ECE900E29C2B /* QGAppDelegate.h */,
 				B1B0E0511911ECE900E29C2B /* QGAppDelegate.m */,
-				B1B0E0521911ECE900E29C2B /* QGFirstViewController.h */,
-				B1B0E0531911ECE900E29C2B /* QGFirstViewController.m */,
-				B1B0E0541911ECE900E29C2B /* QGSecondViewController.h */,
-				B1B0E0551911ECE900E29C2B /* QGSecondViewController.m */,
+				B1A49BF11912343300786375 /* QGPageOne_TVC.h */,
+				B1A49BF21912343300786375 /* QGPageOne_TVC.m */,
+				B1A49BF419123C6400786375 /* QGPageOnePhotoList_TVC.h */,
+				B1A49BF519123C6400786375 /* QGPageOnePhotoList_TVC.m */,
 			);
 			path = assignmentFive;
 			sourceTree = "<group>";
@@ -264,11 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1B0E05D1911ECE900E29C2B /* QGFirstViewController.m in Sources */,
-				B1B0E05E1911ECE900E29C2B /* QGSecondViewController.m in Sources */,
 				B1B0E0591911ECE900E29C2B /* FlickrFetcher.m in Sources */,
 				B1B0E05C1911ECE900E29C2B /* QGAppDelegate.m in Sources */,
 				B1B0E05B1911ECE900E29C2B /* main.m in Sources */,
+				B1A49BF0191215F200786375 /* MyFlickrFetch.m in Sources */,
+				B1A49BF619123C6400786375 /* QGPageOnePhotoList_TVC.m in Sources */,
+				B1A49BF31912343300786375 /* QGPageOne_TVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

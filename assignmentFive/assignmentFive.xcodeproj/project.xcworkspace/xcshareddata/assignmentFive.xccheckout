@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DD893CC0-324D-4207-956D-2F55C3F32784</string>
+	<key>IDESourceControlProjectName</key>
+	<string>assignmentFive</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D4B6AF44-40F5-4904-B26D-F4B0688363A0</key>
+		<string>ssh://github.com/quiga/ios01.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>assignmentFive/assignmentFive.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D4B6AF44-40F5-4904-B26D-F4B0688363A0</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/quiga/ios01.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D4B6AF44-40F5-4904-B26D-F4B0688363A0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D4B6AF44-40F5-4904-B26D-F4B0688363A0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios01</string>
+		</dict>
+	</array>
+</dict>
+</plist>
