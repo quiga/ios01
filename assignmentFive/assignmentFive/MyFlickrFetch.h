@@ -17,5 +17,13 @@
 + (NSString*) getCountryFromPlace:(NSDictionary*)place;
 
 + (NSDictionary *) getPlacesByCountryList:(NSArray *)places;
++ (NSArray *)getCountriesFromPlaces:(NSDictionary *)places;
+
+
++ (NSString *)getTitleFromPhoto:(NSDictionary *)photo;
++ (NSString *)getSubTitleFromPhoto:(NSDictionary *)photo;
+
++ (NSURL *)URLforPhoto:(NSDictionary *)photo;
++ (NSString *)IDforPhoto:(NSDictionary *)photo;
 
 @end
