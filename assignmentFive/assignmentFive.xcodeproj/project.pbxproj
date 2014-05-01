@@ -10,6 +10,7 @@
 		B1A49BF0191215F200786375 /* MyFlickrFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BEF191215F200786375 /* MyFlickrFetch.m */; };
 		B1A49BF31912343300786375 /* QGPageOne_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BF21912343300786375 /* QGPageOne_TVC.m */; };
 		B1A49BF619123C6400786375 /* QGPageOnePhotoList_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BF519123C6400786375 /* QGPageOnePhotoList_TVC.m */; };
+		B1A49BF919127BC000786375 /* QGImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A49BF819127BC000786375 /* QGImageController.m */; };
 		B1B0E0561911ECE900E29C2B /* assignmentFive-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */; };
 		B1B0E0571911ECE900E29C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0461911ECE900E29C2B /* Main.storyboard */; };
 		B1B0E0581911ECE900E29C2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0481911ECE900E29C2B /* InfoPlist.strings */; };
@@ -44,6 +45,8 @@
 		B1A49BF21912343300786375 /* QGPageOne_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGPageOne_TVC.m; sourceTree = "<group>"; };
 		B1A49BF419123C6400786375 /* QGPageOnePhotoList_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGPageOnePhotoList_TVC.h; sourceTree = "<group>"; };
 		B1A49BF519123C6400786375 /* QGPageOnePhotoList_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGPageOnePhotoList_TVC.m; sourceTree = "<group>"; };
+		B1A49BF719127BC000786375 /* QGImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGImageController.h; sourceTree = "<group>"; };
+		B1A49BF819127BC000786375 /* QGImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGImageController.m; sourceTree = "<group>"; };
 		B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "assignmentFive-Info.plist"; sourceTree = "<group>"; };
 		B1B0E0451911ECE900E29C2B /* assignmentFive-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "assignmentFive-Prefix.pch"; sourceTree = "<group>"; };
 		B1B0E0471911ECE900E29C2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				B1A49BF21912343300786375 /* QGPageOne_TVC.m */,
 				B1A49BF419123C6400786375 /* QGPageOnePhotoList_TVC.h */,
 				B1A49BF519123C6400786375 /* QGPageOnePhotoList_TVC.m */,
+				B1A49BF719127BC000786375 /* QGImageController.h */,
+				B1A49BF819127BC000786375 /* QGImageController.m */,
 			);
 			path = assignmentFive;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1B0E0591911ECE900E29C2B /* FlickrFetcher.m in Sources */,
+				B1A49BF919127BC000786375 /* QGImageController.m in Sources */,
 				B1B0E05C1911ECE900E29C2B /* QGAppDelegate.m in Sources */,
 				B1B0E05B1911ECE900E29C2B /* main.m in Sources */,
 				B1A49BF0191215F200786375 /* MyFlickrFetch.m in Sources */,

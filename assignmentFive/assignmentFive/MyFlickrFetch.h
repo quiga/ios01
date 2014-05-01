@@ -10,20 +10,23 @@
 
 @interface MyFlickrFetch : FlickrFetcher
 
-+ (void)loadPlacesOnCompletion:(void (^)(NSArray *places, NSError *error))completionHandler;
++ (void)loadPlaces:(void (^)(NSArray *places, NSError *error))completionHandler;
++ (void)loadPhotos:(NSDictionary *)place
+               maxResults:(NSUInteger)results
+             onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler;
 
-+ (NSString*) getTitleFromPlace:(NSDictionary*)place;
-+ (NSString*) getSubTitleFromPlace:(NSDictionary*)place;
-+ (NSString*) getCountryFromPlace:(NSDictionary*)place;
-
-+ (NSDictionary *) getPlacesByCountryList:(NSArray *)places;
-+ (NSArray *)getCountriesFromPlaces:(NSDictionary *)places;
-
++ (NSString *)getTitleFromPlace:(NSDictionary*)place;
++ (NSString *)getSubTitleFromPlace:(NSDictionary*)place;
++ (NSString *)getCountryFromPlace:(NSDictionary*)place;
 
 + (NSString *)getTitleFromPhoto:(NSDictionary *)photo;
 + (NSString *)getSubTitleFromPhoto:(NSDictionary *)photo;
-
-+ (NSURL *)URLforPhoto:(NSDictionary *)photo;
 + (NSString *)IDforPhoto:(NSDictionary *)photo;
 
++ (NSDictionary *)getPlacesByCountryList:(NSArray *)places;
+
++ (NSArray *)getCountryListFromPlaces:(NSDictionary *)places;
++ (NSArray *)sortByPlace:(NSArray *)places;
+
++ (NSURL *)URLforPhoto:(NSDictionary *)photo;
 @end

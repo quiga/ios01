@@ -13,6 +13,7 @@
 
 @interface MyFlickrFetch()
 + (NSArray*) titleFromPlace:(NSDictionary*)place;
++ (void)load:(NSURL *)url withValueForKeyPath:(NSString *)value AndHandler:(void (^)(NSArray *photos, NSError *error))completionHandler;
 
 @end
 
@@ -22,24 +23,34 @@
     return [[place valueForKeyPath:FLICKR_PLACE_NAME] componentsSeparatedByString:@", "];
 }
 
-+ (void)loadPlacesOnCompletion:(void (^)(NSArray *places, NSError *error))completionHandler
++ (void)loadPlaces:(void (^)(NSArray *places, NSError *error))completionHandler
 {
-    NSLog(@"asd");
+    [MyFlickrFetch load:[MyFlickrFetch URLforTopPlaces] withValueForKeyPath:FLICKR_RESULTS_PLACES AndHandler:completionHandler];
+}
+
++ (void)load:(NSURL *)url withValueForKeyPath:(NSString *)value AndHandler:(void (^)(NSArray *photos, NSError *error))completionHandler
+{
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
-    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:[MyFlickrFetch URLforTopPlaces]
+    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:url
                                                 completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-                                                    NSArray *places;
-                                                    NSLog(@"szeva");
+                                                    NSArray *items;
                                                     if (!error) {
-                                                        places = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:location]
+                                                        items = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:location]
                                                                                                   options:0
-                                                                                                    error:&error] valueForKeyPath:FLICKR_RESULTS_PLACES];
+                                                                                                    error:&error] valueForKeyPath:value];
                                                     }
                                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                                        completionHandler(places, error);
+                                                        completionHandler(items, error);
                                                     });
                                                 }];
     [task resume];
+}
+
++ (void)loadPhotos:(NSDictionary *)place
+               maxResults:(NSUInteger)results
+             onCompletion:(void (^)(NSArray *photos, NSError *error))completionHandler
+{
+    [MyFlickrFetch load:[MyFlickrFetch URLforPhotosInPlace:[place valueForKeyPath:FLICKR_PLACE_ID] maxResults:(int)results] withValueForKeyPath:FLICKR_RESULTS_PHOTOS AndHandler:completionHandler];
 }
 
 + (NSString*) getTitleFromPlace:(NSDictionary*)place{
@@ -55,9 +66,17 @@
     return [[MyFlickrFetch titleFromPlace:place] lastObject];
 }
 
++ (NSArray*) sortByPlace:(NSArray *)places
+{
+    return [places sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [[obj1 valueForKeyPath:FLICKR_PLACE_NAME] localizedCompare:[obj2 valueForKeyPath:FLICKR_PLACE_NAME]];
+    }];
+}
+
+
 + (NSDictionary *) getPlacesByCountryList:(NSArray *)places{
     NSMutableDictionary *elements = [[NSMutableDictionary alloc] init];
-    for(NSArray *place in places){
+    for(NSDictionary *place in places){
         NSString *country = [MyFlickrFetch getCountryFromPlace:place];
         NSMutableArray *items = elements[country];
         if(!items){
@@ -69,7 +88,7 @@
     return elements;
 }
 
-+ (NSArray *)getCountriesFromPlaces:(NSDictionary *)places
++ (NSArray *)getCountryListFromPlaces:(NSDictionary *)places
 {
     NSArray *countryList = [places allKeys];
     countryList = [countryList sortedArrayUsingComparator:^(id a, id b) {
@@ -91,7 +110,7 @@
 
 + (NSString *)getSubTitleFromPhoto:(NSDictionary *)photo
 {
-    NSString *title = [FlickrHelper titleOfPhoto:photo];
+    NSString *title = [MyFlickrFetch getTitleFromPhoto:photo];
     if ([title isEqualToString:FLICKR_DEFAULT_PHOTO_TITLE]) return @"";
     
     NSString *subtitle = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
@@ -102,7 +121,7 @@
 
 + (NSURL *)URLforPhoto:(NSDictionary *)photo
 {
-    return [FlickrHelper URLforPhoto:photo format:FlickrPhotoFormatLarge];
+    return [MyFlickrFetch URLforPhoto:photo format:FlickrPhotoFormatLarge];
 }
 
 + (NSString *)IDforPhoto:(NSDictionary *)photo
