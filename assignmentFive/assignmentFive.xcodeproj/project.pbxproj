@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1B0E0561911ECE900E29C2B /* assignmentFive-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */; };
+		B1B0E0571911ECE900E29C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0461911ECE900E29C2B /* Main.storyboard */; };
+		B1B0E0581911ECE900E29C2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E0481911ECE900E29C2B /* InfoPlist.strings */; };
+		B1B0E0591911ECE900E29C2B /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E04D1911ECE900E29C2B /* FlickrFetcher.m */; };
+		B1B0E05A1911ECE900E29C2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B0E04E1911ECE900E29C2B /* Images.xcassets */; };
+		B1B0E05B1911ECE900E29C2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E04F1911ECE900E29C2B /* main.m */; };
+		B1B0E05C1911ECE900E29C2B /* QGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E0511911ECE900E29C2B /* QGAppDelegate.m */; };
+		B1B0E05D1911ECE900E29C2B /* QGFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E0531911ECE900E29C2B /* QGFirstViewController.m */; };
+		B1B0E05E1911ECE900E29C2B /* QGSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B0E0551911ECE900E29C2B /* QGSecondViewController.m */; };
 		B1C53FD218D2CC420049526F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD118D2CC420049526F /* Foundation.framework */; };
 		B1C53FD418D2CC420049526F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD318D2CC420049526F /* CoreGraphics.framework */; };
 		B1C53FD618D2CC420049526F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD518D2CC420049526F /* UIKit.framework */; };
-		B1C53FDC18D2CC420049526F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1C53FDA18D2CC420049526F /* InfoPlist.strings */; };
-		B1C53FDE18D2CC420049526F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C53FDD18D2CC420049526F /* main.m */; };
-		B1C53FE218D2CC420049526F /* QGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C53FE118D2CC420049526F /* QGAppDelegate.m */; };
-		B1C53FE518D2CC420049526F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C53FE318D2CC420049526F /* Main.storyboard */; };
-		B1C53FE818D2CC420049526F /* QGFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C53FE718D2CC420049526F /* QGFirstViewController.m */; };
-		B1C53FEB18D2CC420049526F /* QGSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C53FEA18D2CC420049526F /* QGSecondViewController.m */; };
-		B1C53FED18D2CC420049526F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C53FEC18D2CC420049526F /* Images.xcassets */; };
 		B1C53FF418D2CC420049526F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FF318D2CC420049526F /* XCTest.framework */; };
 		B1C53FF518D2CC420049526F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD118D2CC420049526F /* Foundation.framework */; };
 		B1C53FF618D2CC420049526F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C53FD518D2CC420049526F /* UIKit.framework */; };
@@ -35,22 +37,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "assignmentFive-Info.plist"; sourceTree = "<group>"; };
+		B1B0E0451911ECE900E29C2B /* assignmentFive-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "assignmentFive-Prefix.pch"; sourceTree = "<group>"; };
+		B1B0E0471911ECE900E29C2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B1B0E0491911ECE900E29C2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B1B0E04B1911ECE900E29C2B /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		B1B0E04C1911ECE900E29C2B /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		B1B0E04D1911ECE900E29C2B /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
+		B1B0E04E1911ECE900E29C2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B1B0E04F1911ECE900E29C2B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B1B0E0501911ECE900E29C2B /* QGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGAppDelegate.h; sourceTree = "<group>"; };
+		B1B0E0511911ECE900E29C2B /* QGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGAppDelegate.m; sourceTree = "<group>"; };
+		B1B0E0521911ECE900E29C2B /* QGFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGFirstViewController.h; sourceTree = "<group>"; };
+		B1B0E0531911ECE900E29C2B /* QGFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGFirstViewController.m; sourceTree = "<group>"; };
+		B1B0E0541911ECE900E29C2B /* QGSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGSecondViewController.h; sourceTree = "<group>"; };
+		B1B0E0551911ECE900E29C2B /* QGSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGSecondViewController.m; sourceTree = "<group>"; };
 		B1C53FCE18D2CC420049526F /* assignmentFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C53FD118D2CC420049526F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B1C53FD318D2CC420049526F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B1C53FD518D2CC420049526F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B1C53FD918D2CC420049526F /* assignmentFive-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "assignmentFive-Info.plist"; sourceTree = "<group>"; };
-		B1C53FDB18D2CC420049526F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B1C53FDD18D2CC420049526F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B1C53FDF18D2CC420049526F /* assignmentFive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "assignmentFive-Prefix.pch"; sourceTree = "<group>"; };
-		B1C53FE018D2CC420049526F /* QGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGAppDelegate.h; sourceTree = "<group>"; };
-		B1C53FE118D2CC420049526F /* QGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGAppDelegate.m; sourceTree = "<group>"; };
-		B1C53FE418D2CC420049526F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1C53FE618D2CC420049526F /* QGFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGFirstViewController.h; sourceTree = "<group>"; };
-		B1C53FE718D2CC420049526F /* QGFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGFirstViewController.m; sourceTree = "<group>"; };
-		B1C53FE918D2CC420049526F /* QGSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGSecondViewController.h; sourceTree = "<group>"; };
-		B1C53FEA18D2CC420049526F /* QGSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGSecondViewController.m; sourceTree = "<group>"; };
-		B1C53FEC18D2CC420049526F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B1C53FF218D2CC420049526F /* assignmentFiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = assignmentFiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C53FF318D2CC420049526F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B1C53FFB18D2CC420049526F /* assignmentFiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "assignmentFiveTests-Info.plist"; sourceTree = "<group>"; };
@@ -82,10 +87,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1B0E0431911ECE900E29C2B /* assignmentFive */ = {
+			isa = PBXGroup;
+			children = (
+				B1B0E0441911ECE900E29C2B /* assignmentFive-Info.plist */,
+				B1B0E0451911ECE900E29C2B /* assignmentFive-Prefix.pch */,
+				B1B0E0461911ECE900E29C2B /* Main.storyboard */,
+				B1B0E0481911ECE900E29C2B /* InfoPlist.strings */,
+				B1B0E04A1911ECE900E29C2B /* FlickrFetcher */,
+				B1B0E04E1911ECE900E29C2B /* Images.xcassets */,
+				B1B0E04F1911ECE900E29C2B /* main.m */,
+				B1B0E0501911ECE900E29C2B /* QGAppDelegate.h */,
+				B1B0E0511911ECE900E29C2B /* QGAppDelegate.m */,
+				B1B0E0521911ECE900E29C2B /* QGFirstViewController.h */,
+				B1B0E0531911ECE900E29C2B /* QGFirstViewController.m */,
+				B1B0E0541911ECE900E29C2B /* QGSecondViewController.h */,
+				B1B0E0551911ECE900E29C2B /* QGSecondViewController.m */,
+			);
+			path = assignmentFive;
+			sourceTree = "<group>";
+		};
+		B1B0E04A1911ECE900E29C2B /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				B1B0E04B1911ECE900E29C2B /* FlickrAPIKey.h */,
+				B1B0E04C1911ECE900E29C2B /* FlickrFetcher.h */,
+				B1B0E04D1911ECE900E29C2B /* FlickrFetcher.m */,
+			);
+			path = FlickrFetcher;
+			sourceTree = "<group>";
+		};
 		B1C53FC518D2CC420049526F = {
 			isa = PBXGroup;
 			children = (
-				B1C53FD718D2CC420049526F /* assignmentFive */,
+				B1B0E0431911ECE900E29C2B /* assignmentFive */,
 				B1C53FF918D2CC420049526F /* assignmentFiveTests */,
 				B1C53FD018D2CC420049526F /* Frameworks */,
 				B1C53FCF18D2CC420049526F /* Products */,
@@ -110,33 +145,6 @@
 				B1C53FF318D2CC420049526F /* XCTest.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B1C53FD718D2CC420049526F /* assignmentFive */ = {
-			isa = PBXGroup;
-			children = (
-				B1C53FE018D2CC420049526F /* QGAppDelegate.h */,
-				B1C53FE118D2CC420049526F /* QGAppDelegate.m */,
-				B1C53FE318D2CC420049526F /* Main.storyboard */,
-				B1C53FE618D2CC420049526F /* QGFirstViewController.h */,
-				B1C53FE718D2CC420049526F /* QGFirstViewController.m */,
-				B1C53FE918D2CC420049526F /* QGSecondViewController.h */,
-				B1C53FEA18D2CC420049526F /* QGSecondViewController.m */,
-				B1C53FEC18D2CC420049526F /* Images.xcassets */,
-				B1C53FD818D2CC420049526F /* Supporting Files */,
-			);
-			path = assignmentFive;
-			sourceTree = "<group>";
-		};
-		B1C53FD818D2CC420049526F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B1C53FD918D2CC420049526F /* assignmentFive-Info.plist */,
-				B1C53FDA18D2CC420049526F /* InfoPlist.strings */,
-				B1C53FDD18D2CC420049526F /* main.m */,
-				B1C53FDF18D2CC420049526F /* assignmentFive-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B1C53FF918D2CC420049526F /* assignmentFiveTests */ = {
@@ -234,9 +242,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C53FED18D2CC420049526F /* Images.xcassets in Resources */,
-				B1C53FDC18D2CC420049526F /* InfoPlist.strings in Resources */,
-				B1C53FE518D2CC420049526F /* Main.storyboard in Resources */,
+				B1B0E0581911ECE900E29C2B /* InfoPlist.strings in Resources */,
+				B1B0E05A1911ECE900E29C2B /* Images.xcassets in Resources */,
+				B1B0E0571911ECE900E29C2B /* Main.storyboard in Resources */,
+				B1B0E0561911ECE900E29C2B /* assignmentFive-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C53FE818D2CC420049526F /* QGFirstViewController.m in Sources */,
-				B1C53FE218D2CC420049526F /* QGAppDelegate.m in Sources */,
-				B1C53FEB18D2CC420049526F /* QGSecondViewController.m in Sources */,
-				B1C53FDE18D2CC420049526F /* main.m in Sources */,
+				B1B0E05D1911ECE900E29C2B /* QGFirstViewController.m in Sources */,
+				B1B0E05E1911ECE900E29C2B /* QGSecondViewController.m in Sources */,
+				B1B0E0591911ECE900E29C2B /* FlickrFetcher.m in Sources */,
+				B1B0E05C1911ECE900E29C2B /* QGAppDelegate.m in Sources */,
+				B1B0E05B1911ECE900E29C2B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,20 +291,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B1C53FDA18D2CC420049526F /* InfoPlist.strings */ = {
+		B1B0E0461911ECE900E29C2B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B1C53FDB18D2CC420049526F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B1C53FE318D2CC420049526F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1C53FE418D2CC420049526F /* Base */,
+				B1B0E0471911ECE900E29C2B /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B1B0E0481911ECE900E29C2B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1B0E0491911ECE900E29C2B /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		B1C53FFC18D2CC420049526F /* InfoPlist.strings */ = {
@@ -467,6 +477,7 @@
 				B1C5400518D2CC420049526F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1C5400618D2CC420049526F /* Build configuration list for PBXNativeTarget "assignmentFiveTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +486,7 @@
 				B1C5400818D2CC420049526F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
